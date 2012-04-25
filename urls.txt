@@ -1,0 +1,2 @@
+http://www.dli.ernet.in/scripts/FullindexDefault.htm?path1=/data/upload/0000/263&first=1&last=31&barcode=2020120000264
+http://www.dli.ernet.in/scripts/FullindexDefault.htm?path1=/data_copy/upload/0071/295&first=1&last=86&barcode=2990100071290
