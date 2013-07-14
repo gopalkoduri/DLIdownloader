@@ -5,14 +5,14 @@
 
 from fnmatch import fnmatch
 import platform
-import urllib
+import urllib2
 import random
 import string
 import sys
 import os
 
 def download_link(url, filename):
-	webFile = urllib.urlopen(url)
+	webFile = urllib2.urlopen(url)
 	localFile = open(filename, 'wb')
 	localFile.write(webFile.read())
 	webFile.close()
@@ -47,6 +47,12 @@ def download_book(URL):
 	return [details["first"], details["last"], details["barcode"]]
 
 def main():
+	#proxy = urllib2.ProxyHandler({'http': 'http://ee11s077:%58ysV~Q@hproxy.iitm.ac.in:3128'})
+	proxy = urllib2.ProxyHandler({'http': 'http://localhost:8123'})
+	auth = urllib2.HTTPBasicAuthHandler()
+	opener = urllib2.build_opener(proxy, auth, urllib2.HTTPHandler)
+	urllib2.install_opener(opener)	
+
 	ifile = sys.argv[1]
 	URLs = file(ifile, "r").readlines()
 	count = 0
